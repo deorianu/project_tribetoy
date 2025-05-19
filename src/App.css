@@ -1,0 +1,815 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nerko+One&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+body{
+  font-family: "Open Sans", sans-serif; background: #ebe9ee;
+}
+
+header {
+  background-color: #f4f6f8; /* Light gray background */
+  padding: 10px 20px; /* Padding for spacing */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+}
+
+
+
+header .row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align everything to the left */
+}
+
+header .col-xs-3 {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between logo and text */
+}
+
+header img {
+  height: 50px; /* Logo size */
+  width: auto;
+  cursor: pointer;
+}
+
+header span {
+  font-size: 35px;
+  font-weight: bold;
+  color: #2e7d32; /* Green color matching "Green Putola" theme */
+  font-family: 'Roboto', sans-serif;
+}
+
+header a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header a:hover span {
+  color: #1b5e20; /* Darker green on hover */
+}
+
+.text-success {
+  color: #28a745 !important; /* Green color */
+}
+
+.text-success:hover {
+  color: #1e7e34 !important; /* Darker green on hover */
+}
+
+.dropdown-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #28a745;
+  font-size: 16px;
+}
+
+.dropdown-toggle:hover {
+  color: #1e7e34;
+}
+
+.dropdown-menu {
+  min-width: 150px;
+  padding: 0;
+}
+
+.dropdown-item {
+  font-size: 14px;
+  color: #212529;
+  padding: 10px 15px;
+  text-align: left;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f9fa; /* Light gray background */
+  color: #28a745; /* Green text */
+}
+
+/* Basic styles for the main container and sidebar */
+.main {
+  display: flex;
+  height: 100vh;
+}
+
+
+
+
+.sideWrapper {
+  width: 250px;
+  position: fixed;
+  top: 80px;
+  left: 0;
+  height: 100%;
+  background-color: #2c3e50;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin: 20px 0;
+}
+
+.sidebar button {
+  width: 100%;
+  padding: 10px;
+  text-align: left;
+  color: white;
+  background-color: #34495e;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+.sidebar button:hover {
+  background-color: #1abc9c;
+}
+
+.sidebar .arrow {
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+
+.sidebar button:hover .arrow {
+  transform: rotate(90deg);
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.sidebar-btn {
+  width: 100%;
+}
+
+.submenu {
+  list-style-type: none;
+  padding-left: 20px;  /* Indent the submenu */
+  margin: 0;           /* Remove extra margin */
+}
+
+.submenu li {
+  padding: 5px 0;
+  background-color: #f4f4f4; /* Add background color for better visibility */
+}
+
+.right-content {
+  padding: 90px 30px;
+}
+
+
+.main .content{
+  width: 80%; flex: 0 0 80%;
+  margin-left:280px;
+  
+  }
+
+.dashboardBoxWrapper{gap: 20px; width: 100%; flex-wrap: wrap;}
+.dashboardBoxWrapper .dashboardBox{width: 48%; height: 200px; background: #1abc9c; border-radius: 10px; overflow: hidden;}
+
+/* Flexbox for content alignment */
+.dashboardBox .d-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Column 1 (Text content) */
+.dashboardBox .col1 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dashboardBox .col1 h4 {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 15px;
+  color: #fff; /* Text color */
+}
+
+.dashboardBox .col1 span {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 15px;
+  color: #dcdcdc; /* Slightly lighter text for contrast */
+}
+
+/* Icon styling */
+.dashboardBox .icon {
+  font-size: 40px;
+  margin: 25px;
+  color: #ffc107; /* Yellow icon */
+}
+
+/* Spacing for the icon */
+.dashboardBox .mt-2 {
+  margin-top: 10px;
+}
+
+.graphBox p{font-size: 14px; opacity: 0.7; }
+
+.dashboardBoxWrapperRow .box{width: 100%; height: 100%; background: #68a3d7; border-radius: 10px;}
+
+
+.card{margin: 25px 0px;}
+
+
+
+/* Table-specific styles */
+.table-responsive {
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #dee2e6;
+  margin-bottom: 1rem;
+  color: #212529;
+}
+
+.table thead {
+  background-color: #343a40;
+  color: #fff;
+}
+
+.table th, .table td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border: 1px solid #dee2e6;
+}
+
+.table th {
+  font-weight: bold;
+  text-align: left;
+}
+
+.v-align {
+  vertical-align: middle;
+}
+
+.tabel-bordered th, .tabel-bordered td {
+  border: 1px solid #dee2e6;
+}
+
+.thead-dark th {
+  background-color: #343a40;
+  color: #fff;
+}
+
+/* Wrapper for the product box */
+table td .productBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Image wrapper for consistency */
+table td .imgWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 580px; /* Set a fixed width */
+  height: 200px; /* Set a fixed height */
+  border-radius: 8px; /* Optional for rounded corners */
+  background-color: #f5f5f5; /* Background color */
+}
+
+/* Image styles */
+table td .imgWrapper .img img {
+  width: 100% !important;
+  height: 100%;
+  object-fit: contain; /* Maintain aspect ratio */
+}
+
+/* Paragraph styles */
+table td p {
+  margin: 10px 0 0;
+  font-size: 18px;
+  color: #555;
+}
+
+/* Price styles */
+.old {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.new {
+  font-weight: bold;
+  color: #d9534f; /* Danger red */
+  margin-left: 10px;
+}
+
+/* Actions styling */
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.actions button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.actions button[color="secondary"] {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.actions button[color="success"] {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.actions button[color="error"] {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.tableFooter .pagination{ margin-left: auto;}
+
+.ratingSection {
+  padding: 1rem;
+  background: linear-gradient(145deg, #ffffff, #f9f9f9);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ratingSection h4 {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+  text-align: center;
+}
+
+.ratingSection .col1 {
+  width: 20%;
+  font-weight: 500;
+  color: #444;
+}
+
+.ratingSection .col2 {
+  width: 10%;
+  text-align: right;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.ratingSection .d-flex {
+  display: flex;
+  align-items: center;
+}
+
+.ratingSection .px-3 {
+  flex: 1;
+}
+
+.MuiLinearProgress-root {
+  height: 8px;
+  border-radius: 4px;
+}
+
+.MuiLinearProgress-bar {
+  background-color: #007bff;
+}
+.reviewSection {
+  padding: 1.5rem;
+  background: linear-gradient(145deg, #ffffff, #f7f7f7);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.reviewSection h4 {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #444;
+  font-weight: bold;
+}
+
+.reviewsRow {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.reviewCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.replyButton {
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.replyButton button {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.replyButton button:hover {
+  background: #0056b3;
+}
+
+.replyIcon {
+  font-size: 1.2rem;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.userInfo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #007bff;
+  object-fit: cover;
+}
+
+.userDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.username {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.ratingStars {
+  font-size: 1rem;
+  color: #ffbf00; /* Gold for stars */
+}
+
+.userReview {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+  margin-top: 0.5rem;
+}
+
+.editModal .css-10d30g3-MuiPaper-root-MuiDialog-paper {
+  width: 900px !important; max-width:900px !important;
+}
+
+/* ProductUpload.css */
+
+/* General Styles */
+.breadcrumb-card {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+
+.breadcrumb-title {
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: #333;
+}
+
+.breadcrumbs_ .MuiChip-root {
+  font-size: 0.875rem;
+}
+
+/* Section Headings */
+.section-heading {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Form Styles */
+.form-label {
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.form-control {
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 0.95rem;
+}
+
+.select-field .MuiSelect-root {
+  font-size: 0.95rem;
+}
+
+.imageUploadBox{width: 100%; flex-wrap: nowrap; gap: 10px;}
+.imageUploadBox .uploadBox{width: 150px; height: 150px; 
+  padding: 20px; border-radius: 10px; border: 1px solid; 
+  border-style: dashed; position: relative; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+}
+.imageUploadBox .uploadBox img{width: 130px; height: 130px;}
+
+.imageUploadBox .uploadBox input{position: absolute; width: 100%; height: 100%; opacity: 0;}
+
+.imageUploadBox .uploadBox .info{display:flex ; align-items: center; 
+  justify-content: center; flex-direction: column; pointer-events: none;}
+
+.imageUploadBox .uploadBox .info svg{font-size: 50px; opacity: 0.3;}
+.imageUploadBox .uploadBox .info h5{opacity: 0.4; font-size: 18px; text-align: center; }
+
+
+/* Main Container */
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f7f7f7;
+  padding: 0 20px;
+}
+
+.signup-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  padding: 30px;
+  text-align: center;
+}
+
+.shoppingBag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.shoppingBag img {
+  width: 40px;
+  margin-right: 10px;
+}
+
+.signup-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form-input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.toggleShowPassword {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.form-label {
+  font-size: 14px;
+  color: #666;
+}
+
+.form-checkbox {
+  margin-right: 10px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.signin-link {
+  font-size: 14px;
+  color: #007bff;
+}
+
+.signin-link a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.signin-link a:hover {
+  text-decoration: underline;
+}
+
+/* General container for the page */
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f4f4;
+}
+
+/* Card style for signup and login form */
+.signup-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  width: 400px;
+}
+
+/* Logo and title styles */
+.shoppingBag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.shoppingBag img {
+  width: 40px;
+  margin-right: 10px;
+}
+
+h5 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.signup-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+/* Form styles */
+.signup-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  border-color: #5c6bc0;
+  outline: none;
+}
+
+/* Focused input state */
+.form-group.focus .form-input {
+  border-color: #5c6bc0;
+}
+
+.toggleShowPassword {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+/* Checkbox and terms style */
+.form-label {
+  font-size: 14px;
+  color: #555;
+}
+
+.form-checkbox {
+  margin-right: 8px;
+}
+
+/* Forgot password link style */
+.forgot-password {
+  font-size: 14px;
+  text-align: right;
+}
+
+.forgot-password-link {
+  color: #5c6bc0;
+  text-decoration: none;
+}
+
+.forgot-password-link:hover {
+  text-decoration: underline;
+}
+
+/* Register link style */
+.not-registered {
+  font-size: 14px;
+  text-align: center;
+}
+
+.register-link {
+  color: #5c6bc0;
+  text-decoration: none;
+}
+
+.register-link:hover {
+  text-decoration: underline;
+}
+
+/* Button style */
+.btn-primary {
+  background-color: #5c6bc0;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #4a5bb3;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .signup-card {
+    width: 90%;
+  }
+}
+
+
+
