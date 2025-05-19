@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/TribeToy.jpeg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <!-- <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo.png" />
+    
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" /> -->
+    
+    <title>TribeToy</title>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Get the URL hash (e.g., #events1)
+        const eventId = window.location.hash.substring(1);
+    
+        if (eventId) {
+          const section = document.getElementById(eventId);
+          if (section) {
+            section.scrollIntoView({ behavior: "smooth" });
+          }
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  </body>
+</html>
