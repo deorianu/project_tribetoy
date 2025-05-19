@@ -1,7 +1,5 @@
 import axios from "axios";
 
-
-
 export const fecthDataFormApi=async(url)=>{
   try {
     const { data } = await axios.get("https://localhost:4000" + url);
@@ -12,14 +10,27 @@ export const fecthDataFormApi=async(url)=>{
   }
 };
 
-export const postData = async (url, formData) => {
+export const postData = async (url, data) => {
   try {
-    // Axios returns data in the 'data' field
-    const { data } = await axios.post("https://localhost:4000" + url, formData);
-    return data; // Return the actual response data
-  } catch (error) {
-    console.error("Error during POST request:", error);
-    return error;
+    //const { data } = await axios.post("http://localhost:4000" + url, formData);
+    const response = await fetch("https://localhost:4000" + url, 
+      {
+        method: 'POST',
+        headers:{
+          'Content-Type':'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+if(response.ok){
+  const data = await response.json()
+  return data; // Return the response data on success
+}else{
+  const errorData = await response.json();
+  return errorData;
+}
+} catch (error) {
+  console.error('Error:', error)
+   
   }
 };
 
@@ -42,41 +53,3 @@ export const deleteData = async (url) => {
     return error;
   }
 };
-
-
-
-
-
-
-
-
-// import axios from "axios";
-// // require('dotenv/config');
-
-// export const fecthDataFormApi=async(url) =>{
-//     try{
-//         const {data} = await axios.get("http://localhost:4000"+url)
-//         return data;
-//     }
-//     catch(error){
-//         console.log(error);
-//         return error;
-//     }
-// }
-
-// export const postData = async (url, formData) => {
-//         const { res } = await axios.post("http://localhost:4000" + url, formData);
-//         return res;
-    
-// };
-
-// export const editData = async (url, updateData) =>{
-//     const { res } = await axios.put(`http://localhost:4000${url}`, updateData)
-//     return res;
-// }
-
-// export const deleteData = async (url) =>{
-//     const { res } =await axios.delete(`http://localhost:4000${url}`)
-//     return res;
-// }
-
